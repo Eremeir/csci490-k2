@@ -13,7 +13,7 @@ def main():
     if not args:
         usage()
     
-    if args[0] == 'generation':
+    if args[0] == 'generation': #generation range method
         if len(args) != 2:
             usage()
         
@@ -26,7 +26,7 @@ def main():
             usage()
         
         
-    elif args[0] == 'types':
+    elif args[0] == 'types': #generation typecount method
         if len(args) != 2:
             usage()
         
@@ -43,13 +43,13 @@ def main():
             print(f'  {type}: {count}')
             
 
-    elif args[0] == 'compare':
+    elif args[0] == 'compare': #compare supermethod
         if len(args) != 4:
             usage()
         
         name1, name2 = args[2], args[3]
         
-        if args[1] == 'pwr': 
+        if args[1] == 'pwr': #standard combat power submethod
             try:
                 power_diff = compare.combat_power_diff(name1, name2)
                 print(f'{name1} has {power_diff:+} combat power than {name2}')
@@ -57,7 +57,7 @@ def main():
                 print(no_mon)
                 usage()
                 
-        elif args[1] == 'hp': 
+        elif args[1] == 'hp': #health diff submethod
             try:
                 power_diff = compare.hp_diff(name1, name2)
                 print(f'{name1} has {power_diff:+} health than {name2}')
@@ -65,7 +65,7 @@ def main():
                 print(no_mon)
                 usage()
                 
-        elif args[1] == 'atk': 
+        elif args[1] == 'atk': #attack diff submethod
             try:
                 power_diff = compare.attack_diff(name1, name2)
                 print(f'{name1} has {power_diff:+} attack than {name2}')
@@ -73,7 +73,7 @@ def main():
                 print(no_mon)
                 usage()
                 
-        elif args[1] == 'def': 
+        elif args[1] == 'def': #defense diff submethod
             try:
                 power_diff = compare.defense_diff(name1, name2)
                 print(f'{name1} has {power_diff:+} defense than {name2}')
