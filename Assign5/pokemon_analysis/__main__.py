@@ -24,6 +24,7 @@ def main():
         except ValueError:
             print(f'Invalid generation provided:', args[1])
             usage()
+        print(generation.generation_ranges(gen_num))
         
         
     elif args[0] == 'types': #generation typecount method
